@@ -1,0 +1,15 @@
+<!--
+  Lab 2.1 — Regla de correlación: Brute Force SSH
+  Detecta 10+ fallos de autenticación desde la misma IP en 60 segundos.
+  SID 5716 = "sshd: Failed password" (regla base Wazuh)
+-->
+<group name="local,ssh,">
+
+  <rule id="100001" level="10" frequency="10" timeframe="60">
+    <if_matched_sid>5716</if_matched_sid>
+    <same_source_ip />
+    <description>Ataque de fuerza bruta SSH detectado desde $(srcip)</description>
+    <group>authentication_failures,brute_force</group>
+  </rule>
+
+</group>

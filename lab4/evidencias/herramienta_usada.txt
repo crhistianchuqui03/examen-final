@@ -1,0 +1,6 @@
+Herramienta: Grafana OSS v10.x
+Fuente de datos: Elasticsearch (índice wazuh-alerts-*)
+URL: http://<IP-EC2>:3000
+Justificación: Grafana ofrece integración nativa con Elasticsearch como datasource,
+permitiendo visualizar alertas Wazuh en tiempo real con dashboards SOC configurables
+y reglas de alerta por umbral sin costo de licencia.

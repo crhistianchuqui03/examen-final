@@ -1,0 +1,18 @@
+{
+  "name": "Wazuh Elasticsearch",
+  "type": "elasticsearch",
+  "access": "proxy",
+  "url": "https://localhost:9200",
+  "basicAuth": true,
+  "basicAuthUser": "admin",
+  "jsonData": {
+    "index": "wazuh-alerts-*",
+    "timeField": "@timestamp",
+    "esVersion": "8.0.0",
+    "logMessageField": "full_log",
+    "logLevelField": "rule.level"
+  },
+  "secureJsonData": {
+    "basicAuthPassword": "SecretPassword"
+  }
+}

@@ -1,0 +1,47 @@
+<!--
+  Lab 2.2 — Regla compuesta: Exfiltración de datos
+
+  Lógica de correlación (3 reglas encadenadas):
+
+  100010 (base, nivel 5):
+    Detecta transferencia saliente > 500 MB en una conexión desde host interno.
+    Se apoya en logs de firewall/iptables decodificados por Wazuh (sid 86001).
+    El campo bytes_out se compara contra 524288000 bytes (500 MB).
+
+  100011 (base, nivel 6):
+    Detecta login SSH exitoso (sid 5715) fuera del horario laboral.
+    Ventana temporal: 22:00 – 06:00 (10 pm – 6 am en sintaxis Wazuh).
+
+  100012 (compuesta, nivel 14 — CRÍTICO):
+    Se dispara cuando la misma IP origen genera AMBOS eventos previos
+    dentro de una ventana de 2 horas (timeframe=7200).
+    Indica posible exfiltración: acceso nocturno + transferencia masiva.
+-->
+<group name="local,exfiltration,firewall,">
+
+  <!-- Paso 1: transferencia saliente masiva (>500 MB) -->
+  <rule id="100010" level="5">
+    <if_sid>86001</if_sid>
+    <field name="bytes_out" type="pcre2">^([5-9]\d{8}|\d{10,})$</field>
+    <description>Transferencia saliente superior a 500 MB desde $(srcip) hacia $(dstip)</description>
+    <group>data_transfer,large_outbound</group>
+  </rule>
+
+  <!-- Paso 2: login exitoso fuera de horario laboral -->
+  <rule id="100011" level="6">
+    <if_matched_sid>5715</if_matched_sid>
+    <time>10 pm - 6 am</time>
+    <description>Login SSH exitoso fuera de horario laboral (22:00-06:00) desde $(srcip)</description>
+    <group>authentication_success,off_hours</group>
+  </rule>
+
+  <!-- Paso 3: correlación — posible exfiltración -->
+  <rule id="100012" level="14" frequency="1" timeframe="7200">
+    <if_matched_sid>100010</if_matched_sid>
+    <if_matched_sid>100011</if_matched_sid>
+    <same_source_ip />
+    <description>CRITICO: Posible exfiltracion de datos — transferencia masiva correlacionada con acceso fuera de horario desde $(srcip)</description>
+    <group>data_exfiltration,critical</group>
+  </rule>
+
+</group>

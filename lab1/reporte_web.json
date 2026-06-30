@@ -1,0 +1,464 @@
+{
+  "fecha_analisis": "2026-06-30 17:49:59",
+  "total_peticiones": 1000,
+  "escaneo_directorios": [
+    {
+      "ip": "45.33.32.156",
+      "inicio": "2024-06-14T03:12:00",
+      "fin": "2024-06-14T03:13:00",
+      "rutas_distintas": 18,
+      "total_peticiones": 31,
+      "rutas_muestra": [
+        "/.env",
+        "/.git/config",
+        "/.htaccess",
+        "/actuator/env",
+        "/admin",
+        "/admin/login",
+        "/backup.zip",
+        "/cgi-bin/test",
+        "/config.php",
+        "/db.sql",
+        "/etc/passwd",
+        "/manager/html",
+        "/phpinfo.php",
+        "/proc/self/environ",
+        "/robots.txt",
+        "/server-status",
+        "/shell.php",
+        "/wp-admin"
+      ]
+    }
+  ],
+  "errores_por_ip": {
+    "45.33.32.156": {
+      "4xx": 44,
+      "5xx": 3,
+      "total": 47
+    },
+    "48.228.22.68": {
+      "4xx": 4,
+      "5xx": 5,
+      "total": 9
+    },
+    "147.242.19.45": {
+      "4xx": 7,
+      "5xx": 5,
+      "total": 12
+    },
+    "91.240.118.172": {
+      "4xx": 6,
+      "5xx": 6,
+      "total": 12
+    },
+    "115.88.85.249": {
+      "4xx": 5,
+      "5xx": 8,
+      "total": 13
+    },
+    "183.17.75.31": {
+      "4xx": 4,
+      "5xx": 8,
+      "total": 12
+    },
+    "198.98.54.31": {
+      "4xx": 7,
+      "5xx": 4,
+      "total": 11
+    },
+    "193.32.162.55": {
+      "4xx": 4,
+      "5xx": 14,
+      "total": 18
+    },
+    "4.214.57.107": {
+      "4xx": 7,
+      "5xx": 2,
+      "total": 9
+    },
+    "76.245.102.25": {
+      "4xx": 3,
+      "5xx": 6,
+      "total": 9
+    },
+    "100.94.189.227": {
+      "4xx": 5,
+      "5xx": 1,
+      "total": 6
+    },
+    "78.159.143.216": {
+      "4xx": 3,
+      "5xx": 6,
+      "total": 9
+    },
+    "122.153.40.102": {
+      "4xx": 7,
+      "5xx": 10,
+      "total": 17
+    },
+    "23.129.64.214": {
+      "4xx": 3,
+      "5xx": 7,
+      "total": 10
+    },
+    "121.250.135.24": {
+      "4xx": 3,
+      "5xx": 3,
+      "total": 6
+    },
+    "142.166.141.134": {
+      "4xx": 3,
+      "5xx": 3,
+      "total": 6
+    },
+    "89.210.135.99": {
+      "4xx": 10,
+      "5xx": 8,
+      "total": 18
+    },
+    "69.190.10.87": {
+      "4xx": 4,
+      "5xx": 4,
+      "total": 8
+    },
+    "37.205.19.102": {
+      "4xx": 5,
+      "5xx": 5,
+      "total": 10
+    },
+    "185.220.101.45": {
+      "4xx": 6,
+      "5xx": 7,
+      "total": 13
+    },
+    "106.116.31.216": {
+      "4xx": 4,
+      "5xx": 4,
+      "total": 8
+    },
+    "179.50.116.35": {
+      "4xx": 5,
+      "5xx": 3,
+      "total": 8
+    },
+    "21.242.59.79": {
+      "4xx": 5,
+      "5xx": 4,
+      "total": 9
+    },
+    "134.214.243.147": {
+      "4xx": 1,
+      "5xx": 6,
+      "total": 7
+    },
+    "68.115.137.145": {
+      "4xx": 4,
+      "5xx": 5,
+      "total": 9
+    },
+    "50.64.21.109": {
+      "4xx": 1,
+      "5xx": 3,
+      "total": 4
+    },
+    "211.75.132.82": {
+      "4xx": 6,
+      "5xx": 6,
+      "total": 12
+    },
+    "207.34.44.100": {
+      "4xx": 4,
+      "5xx": 4,
+      "total": 8
+    },
+    "85.121.25.191": {
+      "4xx": 6,
+      "5xx": 3,
+      "total": 9
+    },
+    "145.51.146.223": {
+      "4xx": 2,
+      "5xx": 2,
+      "total": 4
+    }
+  },
+  "intentos_sqli": [
+    {
+      "ip": "193.32.162.55",
+      "linea": 17,
+      "url": "/login?user=admin'--&pass=x",
+      "codigo": 500,
+      "patrones": [
+        "--",
+        "'"
+      ],
+      "timestamp": "2024-06-14T05:30:16"
+    },
+    {
+      "ip": "193.32.162.55",
+      "linea": 85,
+      "url": "/api/data?filter=1 OR 1=1",
+      "codigo": 500,
+      "patrones": [
+        "OR 1=1"
+      ],
+      "timestamp": "2024-06-14T05:32:56"
+    },
+    {
+      "ip": "193.32.162.55",
+      "linea": 91,
+      "url": "/login?user=admin'--&pass=x",
+      "codigo": 500,
+      "patrones": [
+        "--",
+        "'"
+      ],
+      "timestamp": "2024-06-14T05:31:04"
+    },
+    {
+      "ip": "193.32.162.55",
+      "linea": 125,
+      "url": "/products?cat=1; SELECT * FROM users--",
+      "codigo": 500,
+      "patrones": [
+        "SELECT",
+        "--"
+      ],
+      "timestamp": "2024-06-14T05:30:24"
+    },
+    {
+      "ip": "193.32.162.55",
+      "linea": 180,
+      "url": "/search?q=' OR 1=1--",
+      "codigo": 200,
+      "patrones": [
+        "--",
+        "OR 1=1",
+        "'"
+      ],
+      "timestamp": "2024-06-14T05:30:56"
+    },
+    {
+      "ip": "193.32.162.55",
+      "linea": 212,
+      "url": "/api/v1/users?id=1 UNION SELECT username,password FROM users--",
+      "codigo": 200,
+      "patrones": [
+        "UNION",
+        "SELECT",
+        "--"
+      ],
+      "timestamp": "2024-06-14T05:30:48"
+    },
+    {
+      "ip": "193.32.162.55",
+      "linea": 274,
+      "url": "/search?q=' OR 1=1--",
+      "codigo": 500,
+      "patrones": [
+        "--",
+        "OR 1=1",
+        "'"
+      ],
+      "timestamp": "2024-06-14T05:30:08"
+    },
+    {
+      "ip": "193.32.162.55",
+      "linea": 292,
+      "url": "/item?id=1 UNION SELECT null,table_name FROM information_schema.tables--",
+      "codigo": 500,
+      "patrones": [
+        "UNION",
+        "SELECT",
+        "--"
+      ],
+      "timestamp": "2024-06-14T05:30:40"
+    },
+    {
+      "ip": "193.32.162.55",
+      "linea": 300,
+      "url": "/products?cat=1; SELECT * FROM users--",
+      "codigo": 200,
+      "patrones": [
+        "SELECT",
+        "--"
+      ],
+      "timestamp": "2024-06-14T05:32:48"
+    },
+    {
+      "ip": "193.32.162.55",
+      "linea": 407,
+      "url": "/api/v1/users?id=1 UNION SELECT username,password FROM users--",
+      "codigo": 400,
+      "patrones": [
+        "UNION",
+        "SELECT",
+        "--"
+      ],
+      "timestamp": "2024-06-14T05:32:24"
+    },
+    {
+      "ip": "193.32.162.55",
+      "linea": 479,
+      "url": "/products?cat=1; SELECT * FROM users--",
+      "codigo": 200,
+      "patrones": [
+        "SELECT",
+        "--"
+      ],
+      "timestamp": "2024-06-14T05:31:12"
+    },
+    {
+      "ip": "193.32.162.55",
+      "linea": 527,
+      "url": "/search?q=' OR 1=1--",
+      "codigo": 500,
+      "patrones": [
+        "--",
+        "OR 1=1",
+        "'"
+      ],
+      "timestamp": "2024-06-14T05:31:44"
+    },
+    {
+      "ip": "193.32.162.55",
+      "linea": 557,
+      "url": "/api/data?filter=1 OR 1=1",
+      "codigo": 400,
+      "patrones": [
+        "OR 1=1"
+      ],
+      "timestamp": "2024-06-14T05:31:20"
+    },
+    {
+      "ip": "193.32.162.55",
+      "linea": 609,
+      "url": "/products?cat=1; SELECT * FROM users--",
+      "codigo": 500,
+      "patrones": [
+        "SELECT",
+        "--"
+      ],
+      "timestamp": "2024-06-14T05:32:00"
+    },
+    {
+      "ip": "193.32.162.55",
+      "linea": 625,
+      "url": "/login?user=admin'--&pass=x",
+      "codigo": 500,
+      "patrones": [
+        "--",
+        "'"
+      ],
+      "timestamp": "2024-06-14T05:32:40"
+    },
+    {
+      "ip": "193.32.162.55",
+      "linea": 645,
+      "url": "/login?user=admin'--&pass=x",
+      "codigo": 500,
+      "patrones": [
+        "--",
+        "'"
+      ],
+      "timestamp": "2024-06-14T05:31:52"
+    },
+    {
+      "ip": "193.32.162.55",
+      "linea": 706,
+      "url": "/api/data?filter=1 OR 1=1",
+      "codigo": 200,
+      "patrones": [
+        "OR 1=1"
+      ],
+      "timestamp": "2024-06-14T05:32:08"
+    },
+    {
+      "ip": "193.32.162.55",
+      "linea": 720,
+      "url": "/api/data?filter=1 OR 1=1",
+      "codigo": 400,
+      "patrones": [
+        "OR 1=1"
+      ],
+      "timestamp": "2024-06-14T05:30:32"
+    },
+    {
+      "ip": "193.32.162.55",
+      "linea": 730,
+      "url": "/item?id=1 UNION SELECT null,table_name FROM information_schema.tables--",
+      "codigo": 500,
+      "patrones": [
+        "UNION",
+        "SELECT",
+        "--"
+      ],
+      "timestamp": "2024-06-14T05:32:16"
+    },
+    {
+      "ip": "193.32.162.55",
+      "linea": 754,
+      "url": "/item?id=1 UNION SELECT null,table_name FROM information_schema.tables--",
+      "codigo": 400,
+      "patrones": [
+        "UNION",
+        "SELECT",
+        "--"
+      ],
+      "timestamp": "2024-06-14T05:31:28"
+    },
+    {
+      "ip": "193.32.162.55",
+      "linea": 862,
+      "url": "/search?q=' OR 1=1--",
+      "codigo": 500,
+      "patrones": [
+        "--",
+        "OR 1=1",
+        "'"
+      ],
+      "timestamp": "2024-06-14T05:32:32"
+    },
+    {
+      "ip": "193.32.162.55",
+      "linea": 877,
+      "url": "/item?id=1 UNION SELECT null,table_name FROM information_schema.tables--",
+      "codigo": 500,
+      "patrones": [
+        "UNION",
+        "SELECT",
+        "--"
+      ],
+      "timestamp": "2024-06-14T05:33:04"
+    },
+    {
+      "ip": "193.32.162.55",
+      "linea": 959,
+      "url": "/api/v1/users?id=1 UNION SELECT username,password FROM users--",
+      "codigo": 200,
+      "patrones": [
+        "UNION",
+        "SELECT",
+        "--"
+      ],
+      "timestamp": "2024-06-14T05:31:36"
+    },
+    {
+      "ip": "193.32.162.55",
+      "linea": 978,
+      "url": "/api/v1/users?id=1 UNION SELECT username,password FROM users--",
+      "codigo": 500,
+      "patrones": [
+        "UNION",
+        "SELECT",
+        "--"
+      ],
+      "timestamp": "2024-06-14T05:30:00"
+    }
+  ],
+  "resumen": {
+    "ips_con_escaneo": 1,
+    "total_intentos_sqli": 24,
+    "ips_con_errores": 30
+  }
+}
